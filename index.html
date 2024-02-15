@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourism Website</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .slider {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider .slide {
+      display: none;
+    }
+
+    .destinations {
+      margin-top: 30px;
+    }
+
+    .destination {
+      display: inline-block;
+      width: 30%;
+      margin-right: 20px;
+      vertical-align: top;
+    }
+
+    .destination img {
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Explore the World</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Tours</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slider">
+      <div class="slide">
+        <img src="t2.jpeg" alt="Explore Mumbai">
+      </div>
+      <div class="slide">
+        <img src="t1.jpeg" alt="Amazing Maldives">
+      </div>
+      <div class="slide">
+        <img src="t3.jpeg" alt="Beautiful Kalimpong">
+      </div>
+    </section>
+
+    <section class="destinations">
+      <h2>Popular Destinations</h2>
+      <div class="destination">
+        <img src="t4.jpeg" alt="Explore Mumbai">
+        <h3>Explore Mumbai</h3>
+        <p>Explore Mumbai's vibrant mix of cultures, from historic landmarks like the Gateway of India to bustling markets like Crawford Market. Stroll along Marine Drive for stunning views of the Arabian Sea or delve into the city's culinary scene, offering everything from street food to fine dining.</p>
+      </div>
+      <div class="destination">
+        <img src="t2.jpeg" alt="">
+        <h3>Amazing Maldives</h3>
+        <p>Experience the breathtaking beauty of the Maldives, with its pristine white sandy beaches, crystal-clear turquoise waters, and vibrant marine life. Dive into world-class snorkeling and diving spots, relax in luxurious overwater bungalows, and indulge in exquisite seafood cuisine amidst stunning island scenery.</p>
+      </div>
+      <div class="destination">
+        <img src="t1.jpeg" alt="Destination 3">
+        <h3>Beautiful Kalimpong</h3>
+        <p>Kalimpong, nestled in the Himalayan foothills, offers breathtaking mountain vistas, lush greenery, and a tranquil ambiance. Explore its vibrant bazaars, Buddhist monasteries, and colonial-era architecture. Enjoy adventurous trekking trails, serene tea gardens, and warm hospitality, making it a perfect getaway for nature lovers and culture enthusiasts alike.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tourism Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for the tourism website
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+      slides.forEach(slide => {
+        slide.style.display = 'none';
+      });
+      slides[n].style.display = 'block';
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+
+    setInterval(nextSlide, 5000); // Auto slide change every 5 seconds
+  </script>
+</body>
+</html>
